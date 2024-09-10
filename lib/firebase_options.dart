@@ -68,7 +68,7 @@ class DefaultFirebaseOptions {
     databaseURL: 'https://exercise-387ec-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'exercise-387ec.appspot.com',
     iosClientId: '651983842055-6u24orvglnrksvkqftcfoqn4r88i18kj.apps.googleusercontent.com',
-    iosBundleId: 'com.example.exercise',
+    iosBundleId: 'com.zakinazzal.exercise',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
