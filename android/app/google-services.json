@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "651983842055",
+    "firebase_url": "https://exercise-387ec-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "exercise-387ec",
+    "storage_bucket": "exercise-387ec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:651983842055:android:a6ffeedeca0c7555a2b3a2",
+        "android_client_info": {
+          "package_name": "com.zakinazzal.exercise"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "651983842055-sbmp0sghnoo3nnnqos0b86pkrroc5ipv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCE7umvWU3_G0we-JIA8Gt2nHr6Nz8MaeQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "651983842055-sbmp0sghnoo3nnnqos0b86pkrroc5ipv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "651983842055-6u24orvglnrksvkqftcfoqn4r88i18kj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.exercise"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

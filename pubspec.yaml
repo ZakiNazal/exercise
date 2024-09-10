@@ -1,0 +1,61 @@
+name: exercise
+description: "A new Flutter project."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.1
+
+dependencies:
+  cupertino_icons: ^1.0.8
+  confetti: ^0.7.0
+  curved_navigation_bar_with_label: ^2.1.4
+  flutter:
+    sdk: flutter
+  flutter_native_splash: ^2.4.1
+  sliding_up_panel2: ^3.3.0+1
+  cloud_firestore: ^5.4.0
+  firebase_core: ^3.4.0
+  firebase_analytics: ^11.3.0
+  firebase_app_check: ^0.3.1
+  cloud_functions: ^5.1.0
+  firebase_messaging: ^15.1.0
+  firebase_auth: ^5.2.0
+  image_picker: ^1.1.2
+  firebase_storage: ^12.2.0
+  sliding_up_panel: ^2.0.0+1
+  curved_navigation_bar: ^1.0.3
+  shared_preferences: ^2.3.2
+  package_info_plus: ^8.0.2
+  intl: ^0.19.0
+  flutter_staggered_animations: ^1.1.1
+  provider: ^6.1.2
+  
+flutter_native_splash:
+  color: "#42a5f5"
+  image: asset\images\lifeskills.jpg
+  android: true
+  ios: true
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+
+
+  assets:
+    - asset/images/lifeskills.jpg
+    - asset/images/myphoto.jpg
+    - asset/images/google.png
+    - asset/images/apple.png
+
+  fonts:
+    - family: Rubik
+      fonts:
+        - asset: fonts\Rubik.ttf
+
+
+  uses-material-design: true
