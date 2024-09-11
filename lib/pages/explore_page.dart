@@ -20,7 +20,8 @@ class _ExplorePageState extends State<ExplorePage> {
     {'name': 'Weightlifting', 'icon': Icons.fitness_center, 'color': Colors.red},
     {'name': 'Dancing', 'icon': Icons.music_note, 'color': Colors.pink},
     {'name': 'Hiking', 'icon': Icons.landscape, 'color': Colors.brown},
-    {'name': 'golf', 'icon': Icons.golf_course, 'color': Colors.green[800]},
+    {'name': 'Golf', 'icon': Icons.golf_course, 'color': Colors.green[800]},
+    {'name': 'Skiing', 'icon': Icons.downhill_skiing_rounded, 'color': Colors.lightBlue[300]},
   ];
 
   String _searchQuery = '';
@@ -163,7 +164,7 @@ class _ExplorePageState extends State<ExplorePage> {
               const SizedBox(height: 20),
               const Text(
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-                style: TextStyle(fontSize: 16),
+                style: TextStyle(fontSize: 16, ),
                 textAlign: TextAlign.justify,
               ),
               const SizedBox(height: 20),
@@ -179,7 +180,7 @@ class _ExplorePageState extends State<ExplorePage> {
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
-                child: const Text('Start Activity', style: TextStyle(fontSize: 18, color: Colors.white, fontFamily: 'Rubik')),
+                child: const Text('Start Activity', style: TextStyle(fontSize: 18, color: Colors.white, fontFamily: 'Rubik', fontWeight: FontWeight.bold)),
               ),
             ],
           ),
