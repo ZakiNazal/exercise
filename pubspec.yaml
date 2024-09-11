@@ -45,7 +45,7 @@ dev_dependencies:
 
 flutter:
 
-
+  uses-material-design: true
   assets:
     - asset/images/lifeskills.jpg
     - asset/images/myphoto.jpg
@@ -58,4 +58,3 @@ flutter:
         - asset: fonts\Rubik.ttf
 
 
-  uses-material-design: true

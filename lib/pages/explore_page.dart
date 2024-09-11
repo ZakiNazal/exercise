@@ -20,6 +20,7 @@ class _ExplorePageState extends State<ExplorePage> {
     {'name': 'Weightlifting', 'icon': Icons.fitness_center, 'color': Colors.red},
     {'name': 'Dancing', 'icon': Icons.music_note, 'color': Colors.pink},
     {'name': 'Hiking', 'icon': Icons.landscape, 'color': Colors.brown},
+    {'name': 'golf', 'icon': Icons.golf_course, 'color': Colors.green[800]},
   ];
 
   String _searchQuery = '';
