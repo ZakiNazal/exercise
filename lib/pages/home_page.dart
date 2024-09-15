@@ -1,4 +1,4 @@
-// ignore_for_file: use_super_parameters, library_private_types_in_public_api, use_key_in_widget_constructors, avoid_print
+// ignore_for_file: use_super_parameters, library_private_types_in_public_api, use_key_in_widget_constructors, avoid_print, unused_element
 
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -167,122 +167,126 @@ class _HomePageContentState extends State<HomePageContent> with SingleTickerProv
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: _closeNotifications,
-      child: Stack(
-        children: [
-          SlidingUpPanel(
-            controller: _panelController,
-            minHeight: MediaQuery.of(context).size.height * 0.43,
-            maxHeight: MediaQuery.of(context).size.height * 0.8,
-            borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(30),
-              topRight: Radius.circular(30),
-            ),
-            panel: ExercisesPanel(searchQuery: _searchQuery),
-            body: SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                child: Column(
-                  children: [
-                    const SizedBox(height: 25),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Hi, $_userName!',
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'Rubik'
-                              ),
-                            ),
-                            const SizedBox(height: 8),
-                            Text(
-                              _currentDate,
-                              style: TextStyle(color: Colors.blue[200], fontFamily: 'Rubik'),
-                            ),
-                          ],
-                        ),
-                        Stack(
-                          children: [
-                            GestureDetector(
-                              key: _notificationButtonKey,
-                              onTap: _toggleNotifications,
-                              child: Container(
-                                padding: const EdgeInsets.all(8),
-                                decoration: BoxDecoration(
-                                  color: _allNotificationsCleared ? Colors.grey : Colors.blue,
-                                  shape: BoxShape.circle,
-                                ),
-                                child: Icon(
-                                  _allNotificationsCleared ? Icons.notifications_off : Icons.notifications,
-                                  color: Colors.white
+    final bottomPadding = MediaQuery.of(context).viewInsets.bottom;
+
+    return Scaffold(
+      backgroundColor: const Color(0xff1565c0),
+      body: SafeArea(
+        child: Stack(
+          children: [
+            SlidingUpPanel(
+              minHeight: MediaQuery.of(context).size.height * 0.43 - bottomPadding,
+              maxHeight: MediaQuery.of(context).size.height * 0.8 - bottomPadding,
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(30),
+                topRight: Radius.circular(30),
+              ),
+              panel: ExercisesPanel(searchQuery: _searchQuery),
+              body: SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Column(
+                    children: [
+                      const SizedBox(height: 25),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Hi, $_userName!',
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Rubik'
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 25),
-                    CustomSearchBar(onSearch: _handleSearch),
-                    const SizedBox(height: 25),
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'How do you feel?',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Rubik'
+                              const SizedBox(height: 8),
+                              Text(
+                                _currentDate,
+                                style: TextStyle(color: Colors.blue[200], fontFamily: 'Rubik'),
+                              ),
+                            ],
                           ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 25),
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        EmoticonFace(
-                          emoticonFace: '😊',
-                          mood: 'Happy',
-                        ),
-                        EmoticonFace(
-                          emoticonFace: '😔',
-                          mood: 'Sad',
-                        ),
-                        EmoticonFace(
-                          emoticonFace: '😌',
-                          mood: 'Calm',
-                        ),
-                        EmoticonFace(
-                          emoticonFace: '😠',
-                          mood: 'Angry',
-                        ),
-                      ],
-                    ),
-                  ],
+                          // Remove the notification button from here
+                        ],
+                      ),
+                      const SizedBox(height: 25),
+                      CustomSearchBar(onSearch: _handleSearch),
+                      const SizedBox(height: 25),
+                      const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'How do you feel?',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Rubik'
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 25),
+                      const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          EmoticonFace(
+                            emoticonFace: '😊',
+                            mood: 'Happy',
+                          ),
+                          EmoticonFace(
+                            emoticonFace: '😔',
+                            mood: 'Sad',
+                          ),
+                          EmoticonFace(
+                            emoticonFace: '😌',
+                            mood: 'Calm',
+                          ),
+                          EmoticonFace(
+                            emoticonFace: '😠',
+                            mood: 'Angry',
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-          if (_showNotifications)
             Positioned(
-              top: 80,
+              top: 25,
               right: 20,
-              child: NotificationContainer(
-                onEmpty: _onAllNotificationsCleared,
-                buttonPosition: _buttonPosition,
+              child: GestureDetector(
+                key: _notificationButtonKey,
+                onTap: _toggleNotifications,
+                child: Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: _allNotificationsCleared ? Colors.grey : Colors.blue,
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(
+                    _allNotificationsCleared ? Icons.notifications_off : Icons.notifications,
+                    color: Colors.white,
+                  ),
+                ),
               ),
             ),
-        ],
+            if (_showNotifications)
+              Positioned(
+                top: 80,
+                right: 20,
+                child: NotificationContainer(
+                  onEmpty: _onAllNotificationsCleared,
+                  buttonPosition: _buttonPosition,
+                ),
+              ),
+          ],
+        ),
       ),
     );
   }

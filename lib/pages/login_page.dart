@@ -4,6 +4,7 @@ import 'package:exercise/util/square_tile.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'register_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -48,6 +49,9 @@ class _LoginPageState extends State<LoginPage> {
       Navigator.pop(context);
       // Navigate to home page
       Navigator.pushReplacementNamed(context, '/home');
+      // After successful login
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      await prefs.setBool('isLoggedIn', true);
     } on FirebaseAuthException catch (e) {
       // Pop the loading circle
       Navigator.pop(context);
