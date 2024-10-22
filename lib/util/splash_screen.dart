@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:exercise/pages/login_page.dart';
-
+import 'package:exercise/util/auth_page.dart';
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: const Duration(seconds: 2),
+      duration: const Duration(seconds: 3),
       vsync: this,
     );
 
@@ -29,6 +29,18 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
         );
       }
     });
+
+    _navigateToAuthPage();
+  }
+
+  Future<void> _navigateToAuthPage() async {
+
+    await Future.delayed(const Duration(seconds: 3));
+    if (!mounted) return;
+    
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(builder: (context) => const AuthPage()),
+    );
   }
 
   @override
@@ -40,7 +52,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:Colors.white,
+      backgroundColor: Colors.white,
       body: Center(
         child: Lottie.asset(
           'asset/animation/plant_splash.json',

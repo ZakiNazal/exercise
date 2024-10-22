@@ -53,7 +53,7 @@ flutter:
     - asset/images/myphoto.jpg
     - asset/images/google.png
     - asset/images/apple.png
-    - asset\animation\plant_splash.json
+    - asset/animation/plant_splash.json
 
   fonts:
     - family: Rubik
