@@ -40,28 +40,45 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: const Color(0xff1565c0),
         color: Colors.white,
         buttonBackgroundColor: Colors.white,
-        height: 65, // Slightly increased to accommodate text
+        height: 63, // Slightly increased to accommodate text
         index: _currentIndex,
         items: const <Widget>[
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(Icons.home_rounded, size: 35, color: Color(0xff1565c0)),
-              Text('Home', style: TextStyle(color: Color(0xff1565c0), fontSize: 10,fontFamily: 'Rubik')),
+              Text('Home',
+                  style: TextStyle(
+                      color: Color(0xff1565c0),
+                      fontSize: 10,
+                      fontFamily: 'Rubik',
+                      fontWeight: FontWeight.bold,
+                      
+                      )),
             ],
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(Icons.explore_rounded, size: 35, color: Color(0xff1565c0)),
-              Text('Explore', style: TextStyle(color: Color(0xff1565c0), fontSize: 10, fontFamily: 'Rubik')),
+              Text('Explore',
+                  style: TextStyle(
+                      color: Color(0xff1565c0),
+                      fontSize: 10,
+                      fontFamily: 'Rubik',
+                      fontWeight: FontWeight.bold)),
             ],
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(Icons.person_rounded, size: 35, color: Color(0xff1565c0)),
-              Text('Profile', style: TextStyle(color: Color(0xff1565c0), fontSize: 10, fontFamily: 'Rubik')),
+              Text('Profile',
+                  style: TextStyle(
+                      color: Color(0xff1565c0),
+                      fontSize: 10,
+                      fontFamily: 'Rubik',
+                      fontWeight: FontWeight.bold)),
             ],
           ),
         ],
@@ -175,7 +192,7 @@ class _HomePageContentState extends State<HomePageContent> with SingleTickerProv
         child: Stack(
           children: [
             SlidingUpPanel(
-              minHeight: MediaQuery.of(context).size.height * 0.43 - bottomPadding,
+              minHeight: MediaQuery.of(context).size.height * 0.48 - bottomPadding,
               maxHeight: MediaQuery.of(context).size.height * 0.8 - bottomPadding,
               borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(30),

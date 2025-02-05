@@ -24,7 +24,7 @@ class _EmoticonFaceState extends State<EmoticonFace> {
   @override
   void initState() {
     super.initState();
-    _confettiController = ConfettiController(duration: const Duration(milliseconds: 5));
+    _confettiController = ConfettiController(duration: const Duration(milliseconds: 6));
   }
 
   @override
@@ -74,11 +74,11 @@ class _EmoticonFaceState extends State<EmoticonFace> {
           child: ConfettiWidget(
             confettiController: _confettiController,
             blastDirection: pi / 2,
-            maxBlastForce: 5,
+            maxBlastForce: 3,
             minBlastForce: 1,
             emissionFrequency: 0.05,
-            numberOfParticles: 35,
-            gravity: 0.05,
+            numberOfParticles: 20,
+            gravity: 0.1,
             shouldLoop: false,
             colors: const [
               Colors.green,
